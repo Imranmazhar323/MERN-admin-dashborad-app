@@ -25,7 +25,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-// Define the server port and start the server
 const PORT = process.env.PORT || 3001;
 
 // Apply routes
