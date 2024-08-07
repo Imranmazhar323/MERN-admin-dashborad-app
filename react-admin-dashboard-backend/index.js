@@ -12,6 +12,8 @@ import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
 
 dotenv.config();
 const app = express();
@@ -25,7 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 // Apply routes
 app.use("/client", clientRoutes);
@@ -39,7 +41,9 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Connected to MongoDB"))
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
   .catch((err) => console.error("Failed to connect to MongoDB:", err));
 
 // Start the server
