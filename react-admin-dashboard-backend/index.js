@@ -12,8 +12,14 @@ import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
+
+// data imports
 import User from "./models/User.js";
-import { dataUser } from "./data/index.js";
+import Product from "./models/ProductSchema.js";
+import ProductStat from "./models/ProductStatSchema.js";
+
+// Populate database with sample data
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
 
 dotenv.config();
 const app = express();
@@ -43,6 +49,7 @@ mongoose
   })
   .then(() => {
     console.log("Connected to MongoDB");
+    // ProductStat.insertMany(dataProductStat);
   })
   .catch((err) => console.error("Failed to connect to MongoDB:", err));
 
