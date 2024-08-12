@@ -20,15 +20,18 @@ export const api = createApi({
       providesTags: ["Customers"],
     }),
     getTransactions: build.query({
-      query: (page, pageSize, sort, search) => ({
-        url: "/client/transactions",
-        method: "GET",
-        params: { page, pageSize, sort, search },
+      query: ({ page, pageSize, sort, search }) => ({
+        url: `/client/transactions/?page=${page}&pageSize=${pageSize}&sort=${sort}&search=${search}`,
       }),
       providesTags: ["Transactions"],
     }),
   }),
 });
 
-export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery } =
-  api;
+export const {
+  useGetUserQuery,
+  useGetProductsQuery,
+  useGetCustomersQuery,
+  useGetTransactionsQuery,
+  useFetchPaginatedDataQuery,
+} = api;

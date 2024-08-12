@@ -87,7 +87,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 component="img"
                 alt="profile"
                 src={
-                  "https://odishabytes.com/wp-content/uploads/2018/06/Sunny_Leone_unveils_her_Perfume_brand_LUST_BY_SUNNY_LEONE.jpg" ||
+                  "https://images.entertainment.ie/person/w780_8mZZwu4GJfYJHGHrtgluVn8XXhS.jpg" ||
                   profileImage
                 }
                 height="32px"
