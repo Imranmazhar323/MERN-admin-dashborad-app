@@ -2,12 +2,12 @@ import React from "react";
 import { Box, useTheme } from "@mui/material";
 import Header from "components/Header";
 import { ResponsiveChoropleth } from "@nivo/geo";
-import { useGetGeograpghyQuery } from "state/api";
+import { useGetGeographyQuery } from "state/api";
 import { geoData } from "state/geoData";
 
 const Geography = () => {
   const theme = useTheme();
-  const { data } = useGetGeograpghyQuery();
+  const { data } = useGetGeographyQuery();
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="GEOGRAPHY" subtitle="Find where your users are located." />
