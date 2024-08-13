@@ -59,7 +59,6 @@ export const getTransactions = async (req, res) => {
         { userId: { $regex: new RegExp(search, "i") } },
       ],
     });
-    console.log("Total documents", total);
 
     res.status(200).json({
       transactions,
@@ -74,19 +73,22 @@ export const getGeography = async (req, res) => {
   try {
     const users = await User.find();
     const mappedLocations = users.reduce((acc, { country }) => {
+      console.log("country >>", country);
       const countryISO3 = getCountryIso3(country);
-      if (!acc[countryISO3]) acc[countryISO3] = 0;
-      else acc[countryISO3]++;
+      console.log("countryISO3 >>", countryISO3);
+
+      if (!acc[countryISO3]) acc[countryISO3] = 1;
+      else acc[countryISO3] += 1;
       return acc;
     }, {});
+
     const formattedLocations = Object.entries(mappedLocations).map(
-      ([country, count]) => {
-        return {
-          id: country,
-          value: count,
-        };
-      }
+      ([country, count]) => ({
+        id: country,
+        value: count,
+      })
     );
+
     res.status(200).json(formattedLocations);
   } catch (error) {
     console.error(error);
