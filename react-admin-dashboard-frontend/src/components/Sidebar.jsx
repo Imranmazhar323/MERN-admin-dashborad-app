@@ -198,10 +198,7 @@ const Sidebar = ({
               <Box
                 component="img"
                 alt="profile"
-                src={
-                  "https://images.entertainment.ie/person/w780_8mZZwu4GJfYJHGHrtgluVn8XXhS.jpg" ||
-                  profileImage
-                }
+                src={profileImage}
                 height="40px"
                 width="40px"
                 borderRadius="50%"

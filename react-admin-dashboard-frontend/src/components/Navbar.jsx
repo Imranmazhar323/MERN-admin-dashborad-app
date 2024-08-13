@@ -86,10 +86,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               <Box
                 component="img"
                 alt="profile"
-                src={
-                  "https://images.entertainment.ie/person/w780_8mZZwu4GJfYJHGHrtgluVn8XXhS.jpg" ||
-                  profileImage
-                }
+                src={profileImage}
                 height="32px"
                 width="32px"
                 borderRadius="50%"
